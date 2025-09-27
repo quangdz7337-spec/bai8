@@ -1,5 +1,6 @@
 # bai8
 STM32F103C8T6 – Đọc ADC bằng Polling và gửi UART
+
 🔹 Mục tiêu
 
 Đọc giá trị biến trở từ chân PA0 (ADC1_IN0).
@@ -86,7 +87,9 @@ USART1_SendString(msg);
 Khi mở Hercules (COMx, Baud 9600), màn hình sẽ in ra điện áp đo được từ biến trở:
 
 Voltage: 123 mV
+
 Voltage: 1635 mV
+
 Voltage: 2890 mV
 
 
