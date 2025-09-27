@@ -71,15 +71,22 @@ Sau khi enable, code kiểm tra cờ EOC (End Of Conversion) để đọc giá t
 Lấy mẫu và tính trung bình
 sum = 0;
 for (i = 0; i < ADC_BUF_LEN; i++) {
+
     while (ADC_GetFlagStatus(ADC1, ADC_FLAG_EOC) == RESET);
+    
     sample = ADC_GetConversionValue(ADC1);
+    
     sum += sample;
+    
 }
 avg = sum / ADC_BUF_LEN;
+
 voltage = (avg * 3300) / 4095; // mV
 
 Gửi qua UART
+
 sprintf(msg, "Voltage: %lu mV\r\n", voltage);
+
 USART1_SendString(msg);
 
 🔹 Kết quả
